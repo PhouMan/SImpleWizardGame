@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://lyxcvx0hjxri"]
+
+[ext_resource type="Script" path="res://src/mob.gd" id="1_n8e8p"]
+[ext_resource type="Texture2D" uid="uid://cbuhy7mbtryxj" path="res://assets/rat.png" id="2_br886"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxwfo"]
+size = Vector2(32, 33)
+
+[node name="Mob" type="Area2D" groups=["mob"]]
+script = ExtResource("1_n8e8p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_br886")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_nxwfo")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
